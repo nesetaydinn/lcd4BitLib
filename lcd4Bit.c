@@ -1,13 +1,12 @@
- #include "lcd4Bit.h"
-
+#include "lcd4Bit.h"
 
 void decode4BitsImgArr(void (*drawPx)(uint16_t x, uint16_t y , uint16_t color), fourBitColor_t arr)  
 {	
 	if ((arr.x >= SCREEN_WIDTH) || (arr.y >= SCREEN_HEIGHT))
 		return;
-	if ((arr.x + arr.w - 1) >= SCREEN_WIDTH)
+    if ((arr.x + arr.w - 1) >= SCREEN_WIDTH)
 		return;
-	if ((arr.y + arr.h - 1) >= SCREEN_HEIGHT)
+    if ((arr.y + arr.h - 1) >= SCREEN_HEIGHT)
 		return;
     uint16_t color = 0, x = arr.x, y = arr. y;
     uint32_t data_c = 0;
