@@ -11,20 +11,24 @@ void decode4BitsImgArr(void (*drawPx)(uint16_t x, uint16_t y , uint16_t color), 
     uint16_t color = 0, x = arr.x, y = arr. y;
     uint32_t data_c = 0;
     while(data_c < arr.data_pkg_len){
-        color = colorSelector((arr.data[data_c] & FIRST_NIBBLE)  >> NIBBLE_SIZE, &x, &y, arr.w, arr.x);
+        color = colorSelector((arr.data[data_c] & FIRST_NIBBLE)  >> NIBBLE_SIZE);
         drawPx(x,y,color);
-        color = colorSelector((arr.data[data_c] & SECOND_NIBBLE), &x, &y, arr.w, arr.x);
+        indexUpdate(&x, &y, arr.w, arr.x);
+        color = colorSelector((arr.data[data_c] & SECOND_NIBBLE));
         drawPx(x,y,color);
+        indexUpdate(&x, &y, arr.w, arr.x);
         data_c++;
     }
 }
 
-uint16_t colorSelector(uint8_t color_val, uint16_t * x, uint16_t * y, uint16_t w , uint16_t x_s){
-    *x++;
-    if(*x >= w){
-       *x = x_s;
-       *y++;
+void indexUpdate(uint16_t * x, uint16_t * y, uint16_t w , uint16_t x_start){
+    *x+=1;
+    if(*x >= (w + x_start)){
+       *x = x_start;
+       *y+=1;
     }
+}
+uint16_t colorSelector(uint8_t color_val){
     switch (color_val)
     {
     case COLOR_BLACK_INDEX:
