@@ -11,9 +11,9 @@ void decode4BitsImgArr(void (*drawPx)(uint16_t x, uint16_t y , uint16_t color), 
     uint16_t color = 0, x = arr.x, y = arr. y;
     uint32_t data_c = 0;
     while(data_c < arr.data_pkg_len){
-        color = colorSelector(arr.data[data_c] & FIRST_NIBBLE, &x, &y, arr.w, arr.x);
+        color = colorSelector((arr.data[data_c] & FIRST_NIBBLE)  >> NIBBLE_SIZE, &x, &y, arr.w, arr.x);
         drawPx(x,y,color);
-        color = colorSelector(arr.data[data_c] & SECOND_NIBBLE, &x, &y, arr.w, arr.x);
+        color = colorSelector((arr.data[data_c] & SECOND_NIBBLE), &x, &y, arr.w, arr.x);
         drawPx(x,y,color);
         data_c++;
     }
