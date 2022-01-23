@@ -38,7 +38,7 @@ typedef struct
 
 
 
-void decode4BitsImgArr(void (*drawPx), fourBitColor_t arr);
+void decode4BitsImgArr(void (*drawPx)(uint16_t x, uint16_t y , uint16_t color), fourBitColor_t arr);
 
 
 #ifdef __cplusplus
