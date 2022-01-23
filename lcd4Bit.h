@@ -72,7 +72,8 @@ typedef struct
 
 
 void decode4BitsImgArr(void (*drawPx)(uint16_t x, uint16_t y , uint16_t color), fourBitColor_t arr);
-uint16_t colorSelector(uint8_t color_val, uint16_t * x, uint16_t * y, uint16_t w , uint16_t x_s);
+void indexUpdate(uint16_t * x, uint16_t * y, uint16_t w , uint16_t x_start);
+uint16_t colorSelector(uint8_t color_val);
 
 #ifdef __cplusplus
 }
