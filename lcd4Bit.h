@@ -29,9 +29,11 @@ typedef enum{
 }colors_enum_t;
 
 typedef struct
-{
-    uint8_t x;
-    uint8_t y;
+{   
+    uint16_t w;
+    uint16_t h;
+    uint16_t x;
+    uint16_t y;
     uint32_t data_pkg_len;
     const uint8_t * data;
 }fourBitColor_t;
