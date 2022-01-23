@@ -16,8 +16,9 @@ extern 'C' {
     0th bit - 1st bit - 2nd bit - 3rd bit - 4th bit - 5th bit - 6th bit - 7th bit
                 1st Nibble                -            2nd Nibble                 
 */
-#define FIRST_NIBBLE   0xF0
+#define FIRST_NIBBLE    0xF0
 #define SECOND_NIBBLE   0x0F
+#define NIBBLE_SIZE     0x04
 
 typedef enum{
     COLOR_BLACK     = 0x0000,
