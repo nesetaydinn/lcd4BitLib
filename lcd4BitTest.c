@@ -21,7 +21,7 @@ fourBitColor_t testColor = {
 };
 
 void testPrintColorVals(uint16_t x, uint16_t y , uint16_t color){
-    printf("%d. x = %d, y = %d, colorId = 0x%x\n", x, y ,color);
+    printf("x = %d, y = %d, colorId = 0x%x\n", x, y ,color);
 }
 
 int main(int argc, char const *argv[])
