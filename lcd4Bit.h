@@ -28,6 +28,14 @@ typedef enum{
     COLOR_LIGHTBLUE = 0X7D7C
 }colors_enum_t;
 
+typedef struct
+{
+    uint8_t x;
+    uint8_t y;
+    uint32_t data_pkg_len;
+    const uint8_t * data;
+}fourBitColor_t;
+
 
 #ifdef __cplusplus
 }
