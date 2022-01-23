@@ -12,6 +12,13 @@ extern 'C' {
 #define SCREEN_WIDTH    240 //Customize
 #define SCREEN_HEIGHT   240 //Customize
 
+/*  
+    0th bit - 1st bit - 2nd bit - 3rd bit - 4th bit - 5th bit - 6th bit - 7th bit
+                1st Nibble                -            2nd Nibble                 
+*/
+#define FIRST_NIBBLE   0xF0
+#define SECOND_NIBBLE   0x0F
+
 typedef enum{
     COLOR_BLACK     = 0x0000,
     COLOR_WHITE     = 0xFFFF,
