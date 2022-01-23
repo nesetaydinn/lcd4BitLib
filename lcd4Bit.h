@@ -9,6 +9,9 @@ extern 'C' {
 #include "stdint.h"
 #include "stdbool.h"
 
+#define SCREEN_WIDTH    240 //Customize
+#define SCREEN_HEIGHT   240 //Customize
+
 typedef enum{
     COLOR_BLACK     = 0x0000,
     COLOR_WHITE     = 0xFFFF,
@@ -28,6 +31,26 @@ typedef enum{
     COLOR_LIGHTBLUE = 0X7D7C
 }colors_enum_t;
 
+
+typedef enum{
+    COLOR_BLACK_INDEX     = 0x00,
+    COLOR_WHITE_INDEX           ,
+    COLOR_RED_INDEX             ,
+    COLOR_GREEN_INDEX           ,
+    COLOR_BLUE_INDEX            ,
+    COLOR_MAGENTA_INDEX         ,
+    COLOR_CYAN_INDEX            ,
+    COLOR_YELLOW_INDEX          ,
+    COLOR_GRAY_INDEX            ,
+    COLOR_BRED_INDEX            ,
+    COLOR_GRED_INDEX            ,
+    COLOR_GBLUE_INDEX           ,
+    COLOR_BROWN_INDEX           ,
+    COLOR_BRRED_INDEX           ,
+    COLOR_DARKBLUE_INDEX        ,
+    COLOR_LIGHTBLUE_INDEX       
+}colors_index_enum_t;
+
 typedef struct
 {   
     uint16_t w;
@@ -41,7 +64,7 @@ typedef struct
 
 
 void decode4BitsImgArr(void (*drawPx)(uint16_t x, uint16_t y , uint16_t color), fourBitColor_t arr);
-
+uint16_t colorSelector(uint8_t color_val);
 
 #ifdef __cplusplus
 }
